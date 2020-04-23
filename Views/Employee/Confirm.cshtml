@@ -2,42 +2,46 @@
 @{
     ViewBag.Title = "Confirm";
 }
+<style>
+    .inf {
+        background-color: yellow;
+    }
+</style>
+<h2><b>THÔNG TIN SINH VIÊN ĐÃ ĐĂNG KÝ</b></h2>
+<div class="img">
 
-<h2>THÔNG TIN SINH VIÊN ĐÃ ĐĂNG KÝ</h2>
-<table>
-    <tr>
-        <td></td>
-        <td>Mã nhân viên: </td>
-        <td>@ViewBag.empID</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>Họ tên: </td>
-        <td>@ViewBag.empName</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>Ngày sinh: </td>
-        <td>@ViewBag.empDateOfBirth</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>Email </td>
-        <td>@ViewBag.empEmail</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>Mật khẩu : </td>
-        <td>@ViewBag.empPassword</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>Đơn vị : </td>
-        <td>@ViewBag.empDivision</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>Đơn vị : </td>
-        <td>@ViewBag.empAvatar</td>
-    </tr>
-</table>
+</div>
+<div class="inf">
+    <table>
+        <tr>
+            <td></td>
+            <td><strong>Mã nhân viên:</strong></td>
+            <td>@ViewBag.empID</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Họ tên: </td>
+            <td>@ViewBag.empName</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Ngày sinh: </td>
+            <td>@ViewBag.empDateOfBirth</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Email </td>
+            <td>@ViewBag.empEmail</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Mật khẩu : </td>
+            <td>@ViewBag.empPassword</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>Đơn vị : </td>
+            <td>@ViewBag.empDivision</td>
+        </tr>
+    </table>
+</div>
