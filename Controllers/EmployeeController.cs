@@ -17,7 +17,7 @@ namespace BaiTap3.Controllers
         [HttpPost]
         public ActionResult Index(EmployeeInformation empM)
         {
-            string path = Server.MapPath("/Images/");
+            string path = Server.MapPath("~/Images/");
             string fileName = Path.GetFileName(empM.imgFile.FileName);
             string fullPath = Path.Combine(path, fileName);
             empM.imgFile.SaveAs(fullPath);
@@ -25,9 +25,8 @@ namespace BaiTap3.Controllers
             string fSave = Server.MapPath("~/Images/emp.txt");
             string[] emInfo =
                 {
-                    empM.empID, empM.empName, empM.empDateOfBirth.ToShortDateString(), empM.empEmail, empM.empPassword, empM.empDivision, empM.empImg
+                    empM.empID, empM.empName, empM.empDateOfBirth.ToShortDateString(), empM.empEmail, empM.empPassword, empM.empDivision, fileName   
                 };
-
             //Lưu các thông ti vào tập tin emp.txt
             System.IO.File.WriteAllLines(fSave, emInfo);
             //Ghi nhận các thông tin đăng ký để hiện thị trên View Confirm
@@ -38,12 +37,12 @@ namespace BaiTap3.Controllers
             ViewBag.empPassword = emInfo[4];
             ViewBag.empDivision = emInfo[5];
             ViewBag.empAvatar = "/Images/" + emInfo[6];
-            using (EmployeeEntities1 empDB = new EmployeeEntities1())
-            {
-                empDB.EmployeeInformations.Add(empM);
-                empDB.SaveChanges();
-            }
-            ModelState.Clear();
+            //using (EmployeeEntities1 empDB = new EmployeeEntities1())
+            //{
+            //    empDB.EmployeeInformations.Add(empM);
+            //    empDB.SaveChanges();
+            //}
+            //ModelState.Clear();
 
 
             return View("Confirm");
